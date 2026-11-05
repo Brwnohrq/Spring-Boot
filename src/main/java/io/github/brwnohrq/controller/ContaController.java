@@ -4,6 +4,7 @@ import io.github.brwnohrq.model.Conta;
 import io.github.brwnohrq.model.TipoConta;
 import io.github.brwnohrq.repository.ContaRepository;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -30,5 +31,20 @@ public class ContaController {
         return contaRepository.lisar();
     }
 
+    @GetMapping ("/contaCliente")
+    public List <Conta> contaCliente (){
+        return contaRepository.contaCliente();
     }
+
+    @GetMapping ("/contaRica")
+    public List <Conta> contaRica (){
+        return contaRepository.contaRica();
+    }
+
+    @GetMapping("/contas/{id}")
+    public List<Conta> buscarId(@PathVariable int id) {
+        return contaRepository.buscarId(id);
+    }
+
+}
 
