@@ -22,9 +22,6 @@ public class PokemonModel {
 
     }
 
-    public record ability (String name){
-
-    }
 
 
 
